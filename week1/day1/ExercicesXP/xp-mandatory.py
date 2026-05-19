@@ -35,7 +35,7 @@ print(result)
 5 < 3 #False
 3 == 3 #True
 3 == "3" #False
-#"3" > 3 Error
+"3" > 3 #Error error because we cannot compare a string and an integer
 "Hello" == "hello" #False
 
 # Exercice 4
