@@ -20,7 +20,7 @@ family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
 sum = 0
 
 for name, price in family.items():
-    print(name,"ticket price is ", price)
+    print(name,"ticket price is $", price)
     sum += price
 print(sum)
 
