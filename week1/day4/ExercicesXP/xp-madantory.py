@@ -1,9 +1,79 @@
+# Exercice 1: Pets
+
+class Pets: #Create the Siamese Class
+    def __init__(self, animals):
+        self.animals = animals
+
+    def walk(self):
+        for animal in self.animals:
+            print(animal.walk())
+
+class Cat:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def walk(self):
+        return f'{self.name} is just walking around'
+
+class Siamese(Cat):
+    def __init__(self, name, age, breed):
+        super().__init__(name, age)
+        self.breed = breed
+
+
+bengal_obj = Cat("mimi", 10)
+chartreux_obj = Cat("michou", 7)
+siamese_obj = Siamese("milou", 11, "Siamese")  
+
+# Create a List of Cat Instances
+all_cats = [bengal_obj, chartreux_obj, siamese_obj]
+
+# Create a Pets Instance
+sara_pets = Pets(all_cats)
+sara_pets.walk() #Take Cats for a Walk
+
+
+# Exercice 2: Dogs
+
+class Dog: # Create the Dog Class
+    def __init__(self, name, age, weight):
+        self.name = name
+        self.age = age
+        self.weight = weight
+
+    def bark(self):
+        return f"{self.name} is barking"
+
+    def run_speed(self):
+        return self.weight / self.age * 10
+
+    def fight(self, other_dog):
+        run_speed = self.run_speed()
+        other_run_speed = other_dog.run_speed()
+        if run_speed * self.weight > other_run_speed * other_dog.weight:
+            print(f"{self.name} won the fight")
+        elif run_speed * self.weight < other_run_speed * other_dog.weight:
+            print(f"{other_dog.name} won the fight")
+        else:
+            print("It's a draw!")  
+
+#Create Dog Instances
+dog1 = Dog("Rex", 5, 25)
+dog2 = Dog("Max", 10, 35)
+dog3 = Dog("Thor", 15, 40)
+
+# Test Dog Methods
+print(dog1.bark())
+print(dog2.run_speed())
+dog3.fight(dog2)
+
+
 # Exercice 3:Dogs Domesticated
 
-from mandatory import Dog
 import random
 
-class PetDog(Dog):
+class PetDog(Dog): # Create the PetDog Class
     def __init__(self, name, age, weight, trained=False):
         super().__init__(name, age, weight)
         self.trained = trained
@@ -34,7 +104,7 @@ my_dog.do_a_trick()
 
 # Exercice 4: Family and Person Classes
 
-class Person:
+class Person: #Create the Person Class
     def __init__(self, first_name, age, last_name=""):
         self.first_name = first_name
         self.age = age
@@ -44,11 +114,10 @@ class Person:
         return self.age >= 18
 
 
-# ✅ FIX: Family n'hérite PAS de Person (pas de lien logique)
-class Family:
+class Family: #Create the Family Class
     def __init__(self, last_name):
         self.last_name = last_name
-        self.members = []          # ✅ FIX: liste dans __init__, pas en argument par défaut
+        self.members = []         
 
     def born(self, first_name, age):
         new_person = Person(first_name, age, self.last_name)
@@ -61,13 +130,13 @@ class Family:
                     print("You are over 18, your parents Jane and John accept that you will go out with your friends")
                 else:
                     print("Sorry, you are not allowed to go out with your friends.")
-                return                 # ✅ FIX: on sort dès qu'on a trouvé le membre
-        print("member not exist")      # ✅ FIX: affiché seulement si personne trouvée
+                return                
+        print("member not exist")      
 
     def family_presentation(self):
         print(f"Family: {self.last_name}")
         for member in self.members:
-            print(f"{member.first_name}, age is {member.age}")  # ✅ FIX: .age au lieu de .last_name
+            print(f"{member.first_name}, age is {member.age}") 
 
 
 # Test
