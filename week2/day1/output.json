@@ -1,0 +1,26 @@
+[
+  {
+    "Name":"Alice",
+    "Age":25,
+    "City":"Paris",
+    "Score":88.5
+  },
+  {
+    "Name":"Bob",
+    "Age":30,
+    "City":"Lyon",
+    "Score":92.0
+  },
+  {
+    "Name":"Charlie",
+    "Age":35,
+    "City":"Nice",
+    "Score":79.3
+  },
+  {
+    "Name":"Diana",
+    "Age":28,
+    "City":"Bordeaux",
+    "Score":95.1
+  }
+]
